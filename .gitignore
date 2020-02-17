@@ -135,5 +135,5 @@ dmypy.json
 .pytype/
 
 #added by me
-.timelog
-.requirements.txt
+timelog
+requirements.txt
