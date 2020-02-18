@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'herb_remedy_finder'
+    'herbal_remedy_finder'
 ]
 
 MIDDLEWARE = [
