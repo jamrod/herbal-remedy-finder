@@ -5,6 +5,6 @@ urlpatterns = [
     path('all/', views.recipe_list, name='recipe_list'),
     # url view name for redirects
     path('detail/<int:pk>', views.recipe_detail, name='recipe_detail'),
-    path('new', views.recipe_new, name='recipe_new')
-    # path('new/recipe', views.recipe_create, name='recipe_create')
+    path('new', views.Recipe_Create.as_view(), name='recipe_create'),
+    path('recipes', views.RecipeListView.as_view(), name='recipes')
 ]

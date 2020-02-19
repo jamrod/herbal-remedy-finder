@@ -3,10 +3,10 @@ from django.db import models
 
 class Recipe (models.Model):
     title = models.CharField(max_length=255, default='')
-    description = models.TextField(default='')
-    instructions = models.TextField(default='')
+    description = models.TextField(default='', blank=True)
+    instructions = models.TextField(default='', blank=True)
     pic = models.ImageField(blank=True)
-    tags = models.TextField(default='')
+    tags = models.TextField(default='', blank=True)
 
     def __str__(self):
         return self.title

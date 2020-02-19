@@ -1,9 +1,6 @@
 <h3>Recipe Form</h3>
-<form method="POST"></form>
+<form method="POST">
 {% csrf_token %} {{ form.as_p }}
-{% for f in formlist %}
-    {% csrf_token %}
-    {{ f.as_p }}
-{% endfor %}
-<button type='submit' >Save</button>
+    {{ ingredients.as_p }}
+<input type='submit' value='Save'></input>
 </form>
