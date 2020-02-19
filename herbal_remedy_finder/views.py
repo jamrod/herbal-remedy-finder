@@ -18,11 +18,6 @@ def recipe_detail(request, pk):
     return render(request, 'finder/recipe_detail.html', {'recipe': recipe})
 
 
-class RecipeListView(ListView):
-    model = Recipe
-    template_name = 'finder/recipe_list.html'
-
-
 class Recipe_Create(CreateView):
     model = Recipe
     template_name = 'finder/recipe_form.html'
@@ -47,6 +42,33 @@ class Recipe_Create(CreateView):
 
     def get_success_url(self):
         return reverse('recipe_list')
+
+
+class Recipe_Edit(UpdateView):
+    model = Recipe
+    template_name = 'finder/recipe_form.html'
+    fields = ['title', 'description', 'instructions', 'pic', 'tags']
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        if self.request.POST:
+            data["ingredients"] = IngredientFormset(
+                self.request.POST, instance=self.object)
+        else:
+            data["ingredients"] = IngredientFormset(instance=self.object)
+        return data
+
+    def form_valid(self, form):
+        context = self.get_context_data()
+        ingredients = context["ingredients"]
+        self.object = form.save()
+        if ingredients.is_valid():
+            ingredients.instance = self.object
+            ingredients.save()
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse('recipe_detail', kwargs={'pk': self.object.id})
 
 # def recipe_new(request):
 #     if request.method == 'POST':

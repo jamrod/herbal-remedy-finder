@@ -1,4 +1,11 @@
 <h3>Detail</h3>
-<p>{{recipe.title}}</p>
+<h2>{{recipe.title}}</h2>
 <p>{{recipe.description}}</p>
+<h2>Ingredients</h2>
+<ul>
+  {% for ingredient in recipe.ingredients.all %}
+  <li>{{ingredient}}</li>
+  {% endfor %}
+</ul>
 <p>{{recipe.instructions}}</p>
+<img src="{{recipe.pic}}" alt="recipe-pic" />
