@@ -24,6 +24,17 @@ def search_results(request):
     return render(request, 'finder/recipe_list.html', {'recipes': recipe})
 
 
+def search_results_i(request):
+    query = request.GET.get('q')
+    ingredients = Ingredient.objects.filter(
+        Q(name__icontains=query)
+    )
+    recipes = []
+    for i in ingredients:
+        recipes.append(i.recipe)
+    return render(request, 'finder/recipe_list.html', {'recipes': recipes})
+
+
 def recipe_list(request):
     recipe = Recipe.objects.all()
     return render(request, 'finder/recipe_list.html', {'recipes': recipe})
