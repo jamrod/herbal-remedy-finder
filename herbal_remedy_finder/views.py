@@ -3,9 +3,25 @@ from django.urls import reverse
 from django.forms.models import inlineformset_factory
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView
+import random
+from django.db.models import Q
 
 from .models import Recipe, Ingredient
 from .forms import RecipeForm, IngredientForm, IngredientFormset, NewRecipeForm
+
+
+def home(request):
+    recipes = Recipe.objects.all()
+    recipe = random.choice(recipes)
+    return render(request, 'finder/home.html', {'recipe': recipe})
+
+
+def search_results(request):
+    query = request.GET.get('q')
+    recipe = Recipe.objects.filter(
+        Q(title__icontains=query) | Q(tags__icontains=query)
+    )
+    return render(request, 'finder/recipe_list.html', {'recipes': recipe})
 
 
 def recipe_list(request):
