@@ -1,19 +1,21 @@
 {% extends 'finder/base.html' %} {% block content %}
 <h3>{{recipe.title}}</h3>
-<div class="flex-container-row">
-    <div class="description">
-        <p>{{recipe.description}}</p>
-        <h4>Ingredients:</h3>
-        <ul>
-          {% for ingredient in recipe.ingredients.all %}
-          <li>{{ingredient}}</li>
-          {% endfor %}
-        </ul>
+<div class="flex-container-column">
+    <div class="flex-container-row">
+        <div class="description">
+            <p>{{recipe.description}}</p>
+            <h4>Ingredients:</h3>
+            <ul>
+              {% for ingredient in recipe.ingredients.all %}
+              <li>{{ingredient}}</li>
+              {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <img src= "{{ recipe.pic.url }}" alt="recipe-pic" class="recipe-pic"/>
+        </div>
     </div>
-    <div>
-        <img src= "{{ recipe.pic.url }}" alt="recipe-pic" class="recipe-pic"/>
-    </div>
+    <div class="instructions"><h3>Instructions:</h3><p class="description">{{recipe.instructions | safe }}</p></div>
 </div>
-<div class="flex-container-row"><h3>Instructions:</h3><p class="description">{{recipe.instructions}}</p></div>
 
 {% endblock content %}

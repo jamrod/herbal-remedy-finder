@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib import auth
 
-from .models import Recipe, Ingredient
+from .models import Recipe, Ingredient, Info
 
 
 class IngredientInline(admin.StackedInline):
@@ -15,3 +15,5 @@ class RecipeAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Recipe, RecipeAdmin)
+
+admin.site.register(Info)
