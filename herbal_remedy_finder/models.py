@@ -5,7 +5,8 @@ class Recipe (models.Model):
     title = models.CharField(max_length=255, default='')
     description = models.TextField(default='', blank=True)
     instructions = models.TextField(default='', blank=True)
-    pic = models.ImageField(blank=True)
+    pic = models.ImageField(
+        default='gallery/brown_bottle.jpg', upload_to='gallery')
     tags = models.TextField(default='', blank=True)
 
     def __str__(self):

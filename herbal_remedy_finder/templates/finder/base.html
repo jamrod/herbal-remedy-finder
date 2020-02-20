@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Online Herbal</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="flex-container-row centered">
+        <div class="flex-container-column centered">
+          <h1>Online Herbal</h1>
+          <p>Search for herbal remedies and recipes here!</p>
+        </div>
+      </header>
+      <nav class="flex-container-row centered">
+        <button><a href="/">Search</a></button>
+        <button><a href="/all">Recipes List</a></button>
+      </nav>
+
+      <main class="flex-container-column">
+        {% block content %}{% endblock %}
+      </main>
+
+      <footer>
+        <div class="flex-container-row footer centered">
+          <div class="foot fex-container-row">
+            <p>&copy; 2019 James Rodgers</p>
+          </div>
+          <div class="flex-container-row">
+            <a href="http://github.com/jamrod"
+              ><img
+                src="{% static 'img/Octocat.jpg' %}"
+                alt="github"
+                class="icons"
+            /></a>
+            <a href="http://www.linkedin.com/in/jamescrodgers"
+              ><img
+                src="{% static 'img/LI-In-Bug.png' %}"
+                alt="linked in"
+                class="icons"
+            /></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

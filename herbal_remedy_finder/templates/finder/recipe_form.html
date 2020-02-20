@@ -1,3 +1,4 @@
+{% extends 'finder/base.html' %} {% block content %}
 <h3>Recipe Form</h3>
 <form method="POST">
 {% csrf_token %} {{ form.as_p }}
@@ -5,3 +6,4 @@
 <input type='submit' value='Save'></input>
 </form>
 
+{% endblock content %}

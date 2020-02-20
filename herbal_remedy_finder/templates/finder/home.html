@@ -1,8 +1,9 @@
+{% extends 'finder/base.html' %} {% block content %}
 <h3>Home</h3>
 <h4>Random Recipe</h4>
 {{recipe}}
 <br />
-<h4>Search</h4>
+<h4>Search by name or malady</h4>
 <form action="{% url 'search_results'  %}" method="GET">
   <input name="q" type="text" placeholder="..." />
 </form>
@@ -11,3 +12,4 @@
 <form action="{% url 'search_results_i'  %}" method="GET">
   <input name="q" type="text" placeholder="..." />
 </form>
+{% endblock content %}
