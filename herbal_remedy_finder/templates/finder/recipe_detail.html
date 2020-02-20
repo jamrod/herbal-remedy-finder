@@ -7,7 +7,11 @@
             <h4>Ingredients:</h3>
             <ul>
               {% for ingredient in recipe.ingredients.all %}
-              <li>{{ingredient}}</li>
+              <li>{{ingredient}}
+              {% if ingredient.info_link != null %}
+                <span class="small"><a href ={% url 'additional_info' pk=ingredient.info_link.id %}> (More Info)</a></span>
+              {% endif %}
+            </li>
               {% endfor %}
             </ul>
         </div>

@@ -1,0 +1,8 @@
+{% extends 'finder/base.html' %} {% block content %}
+<div class="flex-container-column info-detail">
+  <h3>{{ info.name }}</h3>
+
+  <p>{{info.data | safe}}</p>
+</div>
+
+{% endblock content %}

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.db.models import Q
 
-from .models import Recipe, Ingredient
+from .models import Recipe, Ingredient, Info
 from .forms import RecipeForm, IngredientForm, IngredientFormset, NewRecipeForm
 
 
@@ -36,6 +36,11 @@ def recipe_list(request):
 def recipe_detail(request, pk):
     recipe = Recipe.objects.get(id=pk)
     return render(request, 'finder/recipe_detail.html', {'recipe': recipe})
+
+
+def additional_info(request, pk):
+    info = Info.objects.get(id=pk)
+    return render(request, 'finder/additional_info.html', {'info': info})
 
 
 def recipe_edit(request, pk):
