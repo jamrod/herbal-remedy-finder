@@ -11,9 +11,7 @@ from .forms import RecipeForm, IngredientForm, IngredientFormset, NewRecipeForm
 
 
 def home(request):
-    recipes = Recipe.objects.all()
-    recipe = random.choice(recipes)
-    return render(request, 'finder/home.html', {'recipe': recipe})
+    return render(request, 'finder/home.html')
 
 
 def search_results(request):
@@ -96,34 +94,6 @@ class Recipe_Edit(UpdateView):
 
     def get_success_url(self):
         return reverse('recipe_detail', kwargs={'pk': self.object.id})
-
-# def recipe_new(request):
-#     if request.method == 'POST':
-#         form = NewRecipeForm(request.POST)
-#         print("form post")
-#         if form.isValid():
-#             recipe = form.save()
-#             return redirect('recipe_create', pk=recipe.id)
-#     else:
-#         form = NewRecipeForm()
-#     return render(request, 'finder/new_recipe_form.html', {'form': form})
-
-
-# def recipe_create(request, pk):
-#     recipe = Recipe.objects.get(id=pk)
-#     if request.method == 'POST':
-#         form = RecipeForm(request.POST)
-#         formset = IngredientFormset(request.POST)
-#         if form.is_valid():
-#             recipe = form.save()
-#             if formset.is_valid():
-#                 for item in formset:
-#                     item = form.save()
-#                 return redirect('recipe_detail', pk=recipe.id)
-#     else:
-#         form = RecipeForm(initial={'title': recipe.title})
-#         formset = IngredientFormset(initial={'recipe': recipe.id})
-#     return render(request, 'finder/recipe_form.html', {'form': form, 'formset': formset})
 
 
 def recipe_edit(request, pk):
