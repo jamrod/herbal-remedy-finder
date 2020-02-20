@@ -1,0 +1,13 @@
+{% extends 'finder/base.html' %} {% block content %}
+<div class="flex-container-column">
+    <h3>Additional Resources</h3>
+    <p>Click on an Ingredient to see more Info.</p>
+<ul>
+  {% for info in items %}
+  <li><a href={% url 'additional_info' pk=info.pk %}>{{ info.name }}</a></li>
+  {% endfor %}
+</ul>
+
+</div>
+
+{% endblock content %}

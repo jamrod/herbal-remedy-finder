@@ -43,6 +43,11 @@ def additional_info(request, pk):
     return render(request, 'finder/additional_info.html', {'info': info})
 
 
+def resources(request):
+    items = Info.objects.all()
+    return render(request, 'finder/resources.html', {'items': items})
+
+
 def recipe_edit(request, pk):
     recipe = Recipe.objects.get(id=pk)
     if request.method == 'POST':

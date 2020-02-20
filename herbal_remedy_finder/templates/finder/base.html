@@ -8,7 +8,7 @@
     <title>Online Herbal</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link
-      href="https://fonts.googleapis.com/css?family=|Lora|Montaga&display=swap"
+      href="https://fonts.googleapis.com/css?family=|Lora|Montaga&display=swap|Oswald&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -20,9 +20,10 @@
           <p>Search for herbal remedies and recipes here!</p> -->
         </div>
       </header>
-      <nav class="flex-container-row space">
+      <nav class="flex-container-row centered">
         <a href="/">Search</a>
         <a href="/all">Recipes List</a>
+        <a href="/resources">Resources</a>
       </nav>
 
       <main class="flex-container-column">
@@ -32,8 +33,9 @@
       <footer>
         <div class="flex-container-row footer centered">
           <a href="/admin">Admin</a>
-          <div class="foot fex-container-row">
-            <p>&copy; 2019 James Rodgers</p>
+          <div class="foot fex-container-column small">
+            <p class="no-pad">&copy; 2019 James Rodgers</p>
+            <span>Content By Faith Rodgers</span>
           </div>
           <div class="flex-container-row">
             <a href="http://github.com/jamrod"

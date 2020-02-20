@@ -61,10 +61,12 @@ h1 {
 h3 {
   padding: 5px;
   margin: 10px;
+  font-family: Oswald, sans-serif;
 }
 
 h4 {
   margin: 2px;
+  font-family: Oswald, sans-serif;
 }
 
 p {
@@ -77,6 +79,10 @@ nav {
   border-bottom: 1px solid rgb(55, 55, 55);
   padding: 4px;
   margin: 2px;
+}
+
+nav a {
+  padding: 0 50px;
 }
 
 a {
@@ -93,6 +99,11 @@ a:hover {
   width: 100%;
   justify-content: space-around;
   margin: 5px 0;
+}
+
+.no-pad {
+  padding: 0;
+  margin: 0;
 }
 
 .icons {
@@ -126,7 +137,15 @@ a:hover {
 }
 
 @media only screen and (max-width: 600px) {
+  header {
+    height: 150px;
+  }
+
   .recipe-pic {
-    max-width: 200px;
+    max-width: 300px;
+  }
+
+  .centered {
+    width: 100%;
   }
 }
