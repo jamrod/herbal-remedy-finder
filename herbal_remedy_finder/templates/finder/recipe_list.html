@@ -1,5 +1,6 @@
 {% extends 'finder/base.html' %} {% block content %}
-<h3>List</h3>
+<h3>Recipes</h3>
+<p>Click on a recipe for details.</p>
 <ul>
   {% for recipe in recipes %}
   <li><a href={% url 'recipe_detail' pk=recipe.pk %}>{{ recipe }}</a></li>

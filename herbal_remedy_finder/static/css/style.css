@@ -3,13 +3,14 @@ body {
   background-image: url(../img/wood-planks.jpg);
   background-repeat: repeat;
   background-size: cover;
+  font-family: "Lora", serif;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-content: space-between;
-  background-color: rgba(231, 225, 225, 0.4);
+  background-color: rgba(231, 225, 225, 0.5);
   min-height: 100vh;
 }
 
@@ -27,6 +28,7 @@ body {
 .centered {
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .space {
@@ -47,14 +49,21 @@ main {
 h1 {
   padding: 0;
   margin-bottom: 2px;
+  font-family: "Montaga", serif;
 }
 
-/* h3 {
-  margin: 2px;
-} */
+h3 {
+  padding: 5px;
+  margin: 10px;
+}
 
 h4 {
   margin: 2px;
+}
+
+p {
+  padding: 5px;
+  margin: 10px;
 }
 
 .nav {
@@ -68,7 +77,7 @@ a {
 }
 
 a:hover {
-  color: rgb(32, 165, 99);
+  color: rgb(11, 82, 46);
 }
 
 .footer {
@@ -84,10 +93,20 @@ a:hover {
 
 .recipe-pic {
   max-width: 500px;
-  max-height: 300px;
+  max-height: 350px;
 }
 
 .description {
   padding: 5px;
   max-width: 600px;
+}
+
+.home {
+  margin: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .recipe-pic {
+    max-width: 200px;
+  }
 }

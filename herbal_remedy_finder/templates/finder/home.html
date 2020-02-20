@@ -1,15 +1,18 @@
 {% extends 'finder/base.html' %} {% block content %}
-<h3>Home</h3>
-<h4>Random Recipe</h4>
-{{recipe}}
-<br />
-<h4>Search by name or malady</h4>
-<form action="{% url 'search_results'  %}" method="GET">
-  <input name="q" type="text" placeholder="..." />
-</form>
-
-<h4>Search by Ingredient</h4>
-<form action="{% url 'search_results_i'  %}" method="GET">
-  <input name="q" type="text" placeholder="..." />
-</form>
-{% endblock content %}
+<div class="home flex-container-column centered">
+  <h3>Search by name or key word</h3>
+  <form action="{% url 'search_results'  %}" method="GET">
+    <input name="q" type="text" placeholder="try fever" />
+  </form>
+  <p>Or</p>
+  <h3>Search by Ingredient</h3>
+  <form action="{% url 'search_results_i'  %}" method="GET">
+    <input name="q" type="text" placeholder="try chamomile" />
+  </form>
+  <p>Or, try this one...</p>
+  <a href="{% url 'recipe_detail' pk=recipe.id %}"
+    ><p class="centered">{{recipe}}</p>
+    <img src="{{ recipe.pic.url }}" alt="recipe-pic" class="recipe-pic" />
+  </a>
+  {% endblock content %}
+</div>
