@@ -1,0 +1,15 @@
+{% extends 'finder/base.html' %} {% block content %}
+<div class="flex-container-column info-detail">
+  <h3>{{ instructions.title }}</h3>
+
+  <p>{{instructions.instructions | safe}}</p>
+  {% if instructions.pic.url != null %}
+  <img
+    src="{{ instructions.pic.url }}"
+    alt="instructions pic"
+    class="recipe-pic"
+  />
+  {% endif %}
+</div>
+
+{% endblock content %}

@@ -7,7 +7,11 @@
   <li><a href={% url 'additional_info' pk=info.pk %}>{{ info.name }}</a></li>
   {% endfor %}
 </ul>
-
+<ul>
+    {% for instruction in instructions %}
+    <li><a href={% url 'instructional_detail' pk=instruction.pk %}>{{ instruction }}</a></li>
+    {% endfor %}
+  </ul>
 </div>
 
 {% endblock content %}

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.db.models import Q
 
-from .models import Recipe, Ingredient, Info
+from .models import Recipe, Ingredient, Info, Instructional
 from .forms import RecipeForm, IngredientForm, IngredientFormset, NewRecipeForm
 
 
@@ -45,16 +45,10 @@ def additional_info(request, pk):
 
 def resources(request):
     items = Info.objects.all()
-    return render(request, 'finder/resources.html', {'items': items})
+    instructions = Instructional.objects.all()
+    return render(request, 'finder/resources.html', {'items': items, 'instructions': instructions})
 
 
-def recipe_edit(request, pk):
-    recipe = Recipe.objects.get(id=pk)
-    if request.method == 'POST':
-        form = RecipeForm(request.POST, instance=recipe)
-        if form.is_valid():
-            recipe = form.save()
-            return redirect('recipe_detail', pk=recipe.id)
-    else:
-        form = RecipeForm(instance=recipe)
-    return render(request, 'finder/recipe_form.html', {'form': form})
+def instructional_detail(request, pk):
+    instructions = Instructional.objects.get(id=pk)
+    return render(request, 'finder/instructional_detail.html', {'instructions': instructions})
