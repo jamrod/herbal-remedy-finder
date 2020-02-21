@@ -20,10 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 's*!7aeg16kx^q^@4_a&amnpl0yg)mk(a0g@yq(k2aib-iv(@d5'
+#SECRET_KEY = 's*!7aeg16kx^q^@4_a&amnpl0yg)mk(a0g@yq(k2aib-iv(@d5'
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY', 's*!7aeg16kx^q^@4_a&amnpl0yg)mk(a0g@yq(k2aib-iv(@d5')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = []
 
@@ -79,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'herb_finder',
         'USER': 'herb_finder_user',
-        'PASSWORD': 'herb_finder',
+        'PASSWORD': os.environ.get('HERB_FINDER_PASS'),
         'HOST': 'localhost'
 
     }
