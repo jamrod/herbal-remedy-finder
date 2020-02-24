@@ -1,0 +1,163 @@
+body {
+  /* background-color: rgb(73, 26, 73); */
+  font-family: "Lora", serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  /* background-color: white; */
+  background-color:white; rgb(231, 225, 225);
+  min-height: 100vh;
+}
+
+.flex-container-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-container-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.centered {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.space {
+  justify-content: space-around;
+  width: 100%;
+}
+
+header {
+  background-color: rgb(197, 200, 204);
+  background-image: url(../img/OnlineHerbalHeader.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 325px;
+  margin: 5px 0;
+}
+
+main {
+  flex-grow: 1;
+  align-items: center;
+}
+
+h1 {
+  padding: 0;
+  margin-bottom: 2px;
+  font-family: "Montaga", serif;
+}
+
+h3 {
+  padding: 5px;
+  margin: 10px;
+  font-family: Oswald, sans-serif;
+}
+
+h4 {
+  margin: 2px;
+  font-family: Oswald, sans-serif;
+}
+
+p {
+  padding: 5px;
+  margin: 10px;
+}
+
+nav {
+  border-top: 1px solid rgb(55, 55, 55);
+  border-bottom: 1px solid rgb(55, 55, 55);
+  padding: 4px;
+  margin: 2px;
+}
+
+nav a {
+  padding: 0 50px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(24, 2, 85);
+}
+
+a:hover {
+  color: rgb(11, 82, 46);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.footer {
+  flex-shrink: 0;
+  width: 100%;
+  justify-content: space-around;
+  margin: 5px 0;
+}
+
+.no-pad {
+  padding: 0;
+  margin: 0;
+}
+
+.icons {
+  max-width: 25px;
+}
+
+.recipe-pic {
+  max-width: 500px;
+  max-height: 350px;
+}
+
+.description {
+  padding: 5px;
+  max-width: 600px;
+}
+
+.home {
+  margin: 5px;
+}
+
+.instructions {
+  text-align: left;
+}
+
+.info-detail {
+  max-width: 600px;
+}
+
+.small {
+  font-size: small;
+}
+
+.headline {
+    border-bottom: 1px solid lightslategray;
+}
+
+@media only screen and (max-width: 1000px) {
+    header {
+        height: 150px;
+      }
+}
+
+@media only screen and (max-width: 500px) {
+  header {
+    height: 100px;
+  }
+
+  .recipe-pic {
+    max-width: 300px;
+  }
+
+  .centered {
+    width: 100%;
+  }
+}
+
