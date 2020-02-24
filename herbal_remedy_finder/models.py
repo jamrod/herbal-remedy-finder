@@ -15,7 +15,7 @@ class Recipe (models.Model):
     description = models.TextField(default='', blank=True)
     instructions = models.TextField(default='', blank=True)
     pic = models.ImageField(
-        default='gallery/brown_bottle.jpg', upload_to='gallery')
+        default='', upload_to='gallery', null=True, blank=True)
     tags = models.TextField(default='')
 
     def __str__(self):
@@ -27,7 +27,7 @@ class Info(models.Model):
     data = models.TextField(blank=True)
 
     def __str__(self):
-        return f"{self.name} {self.info}"
+        return f"{self.name} {self.data}"
 
 
 class Ingredient(models.Model):
@@ -45,6 +45,8 @@ class Ingredient(models.Model):
 class Instructional(models.Model):
     title = models.CharField(max_length=255, default='')
     instructions = models.TextField(default='', blank=True)
+    image = models.ForeignKey(
+        Image, on_delete=models.SET_NULL, related_name='image', blank=True, null=True)
 
     def __str__(self):
         return self.title
