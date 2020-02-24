@@ -3,7 +3,7 @@
 <div class="flex-container-column">
     <div class="flex-container-row">
         <div class="description">
-            <p>{{recipe.description}}</p>
+            <p>{{recipe.description | safe}}</p>
             <h4>Ingredients:</h3>
             <ul>
               {% for ingredient in recipe.ingredients.all %}
