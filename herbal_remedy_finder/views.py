@@ -13,6 +13,8 @@ def search_results(request):
     recipe = Recipe.objects.filter(
         Q(title__icontains=query) | Q(tags__icontains=query)
     )
+    if len(recipe) == 0:
+        return render(request, 'finder/home.html', {'message': 'fail'})
     return render(request, 'finder/recipe_list.html', {'recipes': recipe})
 
 

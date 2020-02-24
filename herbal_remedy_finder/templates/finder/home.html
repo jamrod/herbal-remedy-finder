@@ -2,13 +2,20 @@
 <div class="home flex-container-column centered">
   <h3>Search by name or key word</h3>
   <form action="{% url 'search_results'  %}" method="GET">
-    <input name="q" type="text" placeholder="try fever" />
+    <input name="q" type="text" placeholder="try fever" /><button type="submit">
+      Search
+    </button>
   </form>
   <p>Or</p>
   <h3>Search by Ingredient</h3>
   <form action="{% url 'search_results_i'  %}" method="GET">
-    <input name="q" type="text" placeholder="try chamomile" />
+    <input name="q" type="text" placeholder="try chamomile" /><button
+      type="submit"
+    >
+      Search
+    </button>
   </form>
-
-  {% endblock content %}
+  {% if message == 'fail' %}
+  <p class="fail">Search didn't find any results, try something different.</p>
+  {% endif %} {% endblock content %}
 </div>

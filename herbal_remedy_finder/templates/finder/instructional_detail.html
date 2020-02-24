@@ -1,15 +1,32 @@
 {% extends 'finder/base.html' %} {% block content %}
-<div class="flex-container-column info-detail">
-  <h3>{{ instructions.title }}</h3>
+<h3>{{ instructions.title }}</h3>
+<div class="flex-container-column">
+  {% if instructions.image.pic.url != null %}
+  <div class="flex-container-row">
+    <div class="description">
+      <p>{{instructions.instructions | safe}}</p>
+    </div>
 
-  <p>{{instructions.instructions | safe}}</p>
-  {% if instructions.pic.url != null %}
-  <img
-    src="{{ instructions.pic.url }}"
-    alt="instructions pic"
-    class="recipe-pic"
-  />
+    <div class="centered">
+      <img
+        src="{{ instructions.image.pic.url }}"
+        alt="instructions pic"
+        class="recipe-pic"
+      />
+    </div>
+  </div>
+  {% else %}
+  <div class="instructions">
+    <p>{{instructions.instructions | safe}}</p>
+  </div>
   {% endif %}
+  <p class="disclaimer">
+    <i
+      >Disclaimer:<br />I am not a medical doctor, therefore any information
+      provided here is not meant to be medical advice. Please consult your
+      healthcare practitioner and do your own due diligence.</i
+    >
+  </p>
 </div>
 
 {% endblock content %}

@@ -95,6 +95,10 @@ ul {
   list-style-type: none;
 }
 
+.fail {
+    color: red;
+}
+
 .footer {
   flex-shrink: 0;
   width: 100%;
@@ -112,6 +116,7 @@ ul {
 }
 
 .recipe-pic {
+    padding: 20px 0 0;
   max-width: 500px;
   max-height: 350px;
 }
@@ -127,10 +132,7 @@ ul {
 
 .instructions {
   text-align: left;
-}
-
-.info-detail {
-  max-width: 600px;
+  max-width: 1000px;
 }
 
 .small {
@@ -139,6 +141,11 @@ ul {
 
 .headline {
     border-bottom: 1px solid lightslategray;
+}
+
+.disclaimer {
+    font-size: small;
+    max-width: 950px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -154,6 +161,7 @@ ul {
 
   .recipe-pic {
     max-width: 300px;
+    padding: 0;
   }
 
   .centered {
