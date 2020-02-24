@@ -27,7 +27,7 @@ class Info(models.Model):
     data = models.TextField(blank=True)
 
     def __str__(self):
-        return f"{self.name} {self.data}"
+        return self.name
 
 
 class Ingredient(models.Model):
