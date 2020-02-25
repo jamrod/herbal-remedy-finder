@@ -102,13 +102,30 @@ admin.site.register(Recipe, RecipeAdmin)
 
 I spent a lot of time trying to figure out how to create the ingredients with the recipe simultaneously. I had figured out a way to do it with forms, but it wasn't the cleanest solution. Then I realized I needed to do it from the admin console and that solution was much cleaner. The solution used 'inlines' as in the above code snippet. I had no need for a non-admin site user to upload recipes so I removed all of my other forms and just worked with the admin console.
 I also made numerous changes to my Models as I worked through implementation. This forced me to become very familiar with the migrations system and I became adept at rolling back migrations and making adjustments.
-The key command to clean up migrations is to run a previous migration, but you have to make sure that yourt current code base won't conflict with that migration.
+The key command to clean up migrations is to run a previous migration, but you have to make sure that your current code base won't conflict with that migration.
 
 ```
 python manage.py migrate herbal_recipe_finder 0003
 ```
 
-This will migrate back to the migration for the herbal_recipe_finder app that starts with 003
+This will migrate back to the migration for the herbal_recipe_finder app that starts with 0003
+
+Another thing I struggled with was sorting the results of searches, especially the ingredients search which was using the primary key to get back to the recipe. This shows how I did it in views.py, and also how I handled an empty search result.
+
+```
+def search_results_i(request):
+    query = request.GET.get('q')
+    ingredients = Ingredient.objects.filter(
+        Q(name__icontains=query)
+    )
+    list = []
+    for i in ingredients:
+        list.append(i.recipe)
+    list.sort(key=lambda x: x.title)
+    if len(list) == 0:
+        return render(request, 'finder/home.html', {'message': 'fail'})
+    return render(request, 'finder/recipe_list.html', {'recipes': list})
+```
 
 ### Timelines
 

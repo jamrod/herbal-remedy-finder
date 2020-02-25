@@ -22,11 +22,11 @@ def search_results_i(request):
     query = request.GET.get('q')
     ingredients = Ingredient.objects.filter(
         Q(name__icontains=query)
-    ).order_by('recipe')
+    )
     list = []
     for i in ingredients:
         list.append(i.recipe)
-    # recipes = list.sort(key=lambda x: x.title)
+    list.sort(key=lambda x: x.title)
     if len(list) == 0:
         return render(request, 'finder/home.html', {'message': 'fail'})
     return render(request, 'finder/recipe_list.html', {'recipes': list})
