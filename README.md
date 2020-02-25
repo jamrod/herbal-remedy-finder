@@ -74,7 +74,7 @@ admin.site.register(Recipe, RecipeAdmin)
 
 ### Issues and resolutions
 
-I spent a lot of time trying to figure out how to create the ingredients with the recipe simultaneously. I had figured out a way to do it with forms, but it wasn't the cleanest solution. Then I realized I needed to do it from the admin console and that solution was much cleaner. I had no need for a non-admin site-user to upload recipes so I removed all of my other forms and just worked with the admin console.
+I spent a lot of time trying to figure out how to create the ingredients with the recipe simultaneously. I had figured out a way to do it with forms, but it wasn't the cleanest solution. Then I realized I needed to do it from the admin console and that solution was much cleaner. The solution used 'inlines' as in the above code snippet. I had no need for a non-admin site user to upload recipes so I removed all of my other forms and just worked with the admin console.
 I also made numerous changes to my Models as I worked through implementation. This forced me to become very familiar with the migrations system and I became adept at rolling back migrations and making adjustments.
 The key command to clean up migrations is to run a previous migration, but you have to make sure that yourt current code base won't conflict with that migration.
 

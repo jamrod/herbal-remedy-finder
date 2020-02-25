@@ -120,13 +120,17 @@ ul {
   max-width: 25px;
 }
 
+.detail-page {
+    width: 70%;
+}
+
 .detail-container {
     max-width: 1000px;
 }
 
 .recipe-pic {
-    float: right;
-    padding: 20px 0 0;
+  float: right;
+  padding: 20px 0 0;
   max-width: 500px;
   max-height: 350px;
 }
@@ -134,6 +138,7 @@ ul {
 .description {
   padding: 5px;
   max-width: 490px;
+  /* min-width: 400px; */
 }
 
 .home {
@@ -161,10 +166,14 @@ ul {
     width: 100%
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1050px) {
     header {
         height: 150px;
       }
+
+    .detail-page {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -178,6 +187,7 @@ ul {
     margin: 0 auto;
     padding: 0 20px;
   }
+
 
   .centered {
     width: 100%;
