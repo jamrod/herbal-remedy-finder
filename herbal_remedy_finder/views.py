@@ -12,7 +12,7 @@ def search_results(request):
     query = request.GET.get('q')
     recipe = Recipe.objects.filter(
         Q(title__icontains=query) | Q(tags__icontains=query)
-    )
+    ).order_by('title')
     if len(recipe) == 0:
         return render(request, 'finder/home.html', {'message': 'fail'})
     return render(request, 'finder/recipe_list.html', {'recipes': recipe})
@@ -22,15 +22,18 @@ def search_results_i(request):
     query = request.GET.get('q')
     ingredients = Ingredient.objects.filter(
         Q(name__icontains=query)
-    )
-    recipes = []
+    ).order_by('recipe')
+    list = []
     for i in ingredients:
-        recipes.append(i.recipe)
-    return render(request, 'finder/recipe_list.html', {'recipes': recipes})
+        list.append(i.recipe)
+    # recipes = list.sort(key=lambda x: x.title)
+    if len(list) == 0:
+        return render(request, 'finder/home.html', {'message': 'fail'})
+    return render(request, 'finder/recipe_list.html', {'recipes': list})
 
 
 def recipe_list(request):
-    recipe = Recipe.objects.all()
+    recipe = Recipe.objects.all().order_by('title')
     return render(request, 'finder/recipe_list.html', {'recipes': recipe})
 
 

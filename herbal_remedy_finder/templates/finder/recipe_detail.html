@@ -1,7 +1,9 @@
 {% extends 'finder/base.html' %} {% block content %}
-<h3>{{recipe.title}}</h3>
+
 <div class="flex-container-column">
-    <div class="flex-container-row">
+    <div class="left"><h3>{{recipe.title}}</h3></div>
+    <div class="detail-container">
+        <img src= "{{ recipe.image.pic.url }}" alt="recipe-pic" class="recipe-pic"/>
         <div class="description">
             <p>{{recipe.description | safe}}</p>
             <h4>Ingredients:</h3>
@@ -15,22 +17,10 @@
               {% endfor %}
             </ul>
         </div>
-        <div class="centered">
-            <img src= "{{ recipe.image.pic.url }}" alt="recipe-pic" class="recipe-pic"/>
-        </div>
+            
+            <h3>Instructions:</h3><p class="instructions">{{recipe.instructions | safe }}</p>
     </div>
-    <div class="instructions"><h3>Instructions:</h3><p>{{recipe.instructions | safe }}</p></div>
-
-    <p class="disclaimer">
-        <b>DISCLAIMER: THIS WEBSITE DOES NOT PROVIDE MEDICAL ADVICE</b><br />
-        <i
-          >The information contained on this website are for informational purposes
-          only. No material on this site is intended to be a substitute for
-          professional medical advice, diagnosis or treatment. Always seek the
-          advice of your physician or other qualified health care provider with any
-          questions regarding a medical condition or treatment.</i
-        >
-      </p>
+    
 </div>
 
 {% endblock content %}
