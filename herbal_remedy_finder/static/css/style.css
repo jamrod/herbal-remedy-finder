@@ -80,15 +80,19 @@ nav {
 
 nav a {
   padding: 0 50px;
+  text-decoration: none;
 }
 
 a {
-  text-decoration: none;
   color: rgb(24, 2, 85);
 }
 
 a:hover {
   color: rgb(11, 82, 46);
+}
+
+.no-line{
+    text-decoration: none;
 }
 
 ul {

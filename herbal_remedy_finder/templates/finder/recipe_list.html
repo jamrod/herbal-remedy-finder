@@ -3,7 +3,7 @@
 <span>Click on a recipe for details</span>
 <ul>
   {% for recipe in recipes %}
-  <li><a href={% url 'recipe_detail' pk=recipe.pk %}>{{ recipe }}</a></li>
+  <li><a href={% url 'recipe_detail' pk=recipe.pk %} class="no-line">{{ recipe }}</a></li>
   {% endfor %}
 </ul>
 {% endblock content %}

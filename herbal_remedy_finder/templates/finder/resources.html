@@ -6,7 +6,7 @@
             <h4>Additional Ingredient Info</h4>
             <ul>
             {% for info in items %}
-                <li><a href={% url 'additional_info' pk=info.pk %}>{{ info.name }}</a></li>
+                <li><a href={% url 'additional_info' pk=info.pk %} class="no-line">{{ info.name }}</a></li>
             {% endfor %}
             </ul>
         </div>
@@ -14,7 +14,7 @@
             <h4>Herbal Preparations</h4>
             <ul>
             {% for instruction in instructions %}
-                <li><a href={% url 'instructional_detail' pk=instruction.pk %}>{{ instruction }}</a></li>
+                <li><a href={% url 'instructional_detail' pk=instruction.pk  %} class="no-line">{{ instruction }}</a></li>
             {% endfor %}
             </ul>
         </div>
