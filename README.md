@@ -7,6 +7,15 @@
 Online Herbal contains a database of recipes which are searchable by name, key words or ingredients. Also, there are instructionals on basic medicine making and information on individual ingredients uses in herbal medicine.
 Online Herbal has has full CRUD through the admin console.
 
+## Project Links
+
+- [GitHub repo](github.com:jamrod/herbal-remedy-finder.git)
+- [Website](www.onlineherbal.org)
+
+## ScreenShot
+
+![Screenshot](https://i.imgur.com/14YcLUh.png "Screenshot" | width=500)
+
 ### Technologies
 
 Built with Python Django and Postgresql. Deployed to an EC2 instance on AWS, with routing through Route 53.
@@ -86,10 +95,11 @@ This will migrate back to the migration for the herbal_recipe_finder app that st
 
 ### Timelines
 
-area | estimate | actual
-basic Layout | |
-models, routes, urls| |
-forms | |
-CSS | |
-database isues | |  
-data Entry | |
+| area                 | estimate |   actual   |
+| -------------------- | :------: | :--------: |
+| basic Layout         |  1 day   |  1/2 day   |
+| models, routes, urls |  1 day   | 1 1/2 days |
+| forms                |  1 day   |   1 day    |
+| CSS                  |  1 day   | 1 1/2 days |
+| database issues      |  1 day   |  1/2 day   |
+| data Entry           |  1 day   | 1 1/2 days |
