@@ -10,7 +10,7 @@ Online Herbal has has full CRUD through the admin console.
 ## Project Links
 
 - [GitHub repo](http://github.com:jamrod/herbal-remedy-finder.git)
-- [Website](www.onlineherbal.org)
+- [Website](http://www.onlineherbal.org)
 
 ## ScreenShot
 
