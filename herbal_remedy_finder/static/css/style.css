@@ -143,6 +143,10 @@ ul {
     border-bottom: 1px solid lightslategray;
 }
 
+.instructional-links{
+    padding: 0 10px;
+}
+
 .disclaimer {
     font-size: small;
     max-width: 950px;

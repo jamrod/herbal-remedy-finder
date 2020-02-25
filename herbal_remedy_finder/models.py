@@ -10,6 +10,16 @@ class Image (models.Model):
         return self.name
 
 
+class Instructional(models.Model):
+    title = models.CharField(max_length=255, default='')
+    instructions = models.TextField(default='', blank=True)
+    image = models.ForeignKey(
+        Image, on_delete=models.SET_NULL, related_name='image', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+
 class Recipe (models.Model):
     title = models.CharField(max_length=255, default='')
     description = models.TextField(default='', blank=True)
@@ -40,13 +50,3 @@ class Ingredient(models.Model):
 
     def __str__(self):
         return f"{self.measure} {self.name}"
-
-
-class Instructional(models.Model):
-    title = models.CharField(max_length=255, default='')
-    instructions = models.TextField(default='', blank=True)
-    image = models.ForeignKey(
-        Image, on_delete=models.SET_NULL, related_name='image', blank=True, null=True)
-
-    def __str__(self):
-        return self.title
