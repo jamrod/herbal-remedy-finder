@@ -53,17 +53,34 @@ Built with Python Django and Postgresql. Deployed to an EC2 instance on AWS, wit
 ### Models
 
 - Recipe
+
   - title
   - description
   - instructions
   - tags
   - image
 
--Ingredient - name - measure - info_link
+- Ingredient
 
-- Instructional - title - instructions - image
-  -Info - name - data
-  Image - name - pic (upload)
+  - name
+  - measure
+  - info_link
+
+- Instructional
+
+  - title
+  - instructions
+  - image
+
+- Info
+
+  - name
+  - data
+
+- Image
+
+  - name
+  - pic (upload)
 
 ### Code Snippet
 
