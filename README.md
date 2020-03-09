@@ -136,4 +136,5 @@ def search_results_i(request):
 | forms                |  1 day   |   1 day    |
 | CSS                  |  1 day   | 1 1/2 days |
 | database issues      |  1 day   |  1/2 day   |
+| deployment           | 1/2 day  |   1 day    |
 | data Entry           |  1 day   | 1 1/2 days |
