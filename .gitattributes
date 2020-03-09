@@ -26,3 +26,6 @@
 # with the python modules ``pickle``, ``dbm.*``,
 # ``shelve``, ``marshal``, ``anydbm``, & ``bsddb``
 # (among others).
+
+# force to display as Python and not javascript
+ *.js linguist-language=Python
