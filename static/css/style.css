@@ -9,7 +9,7 @@ body {
   align-content: space-between;
   /* background-color: white; */
   background-color:white; rgb(231, 225, 225);
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .flex-container-row {
@@ -80,10 +80,10 @@ nav {
 
 nav a {
   padding: 0 50px;
+  text-decoration: none;
 }
 
 a {
-  text-decoration: none;
   color: rgb(24, 2, 85);
 }
 
@@ -91,8 +91,21 @@ a:hover {
   color: rgb(11, 82, 46);
 }
 
+.no-line{
+    text-decoration: none;
+}
+
 ul {
   list-style-type: none;
+}
+
+.left {
+    width: 100%;
+    text-align: left;
+}
+
+.fail {
+    color: red;
 }
 
 .footer {
@@ -111,14 +124,25 @@ ul {
   max-width: 25px;
 }
 
+.detail-page {
+    width: 70%;
+}
+
+.detail-container {
+    max-width: 1000px;
+}
+
 .recipe-pic {
+  float: right;
+  padding: 20px 0 0;
   max-width: 500px;
   max-height: 350px;
 }
 
 .description {
   padding: 5px;
-  max-width: 600px;
+  max-width: 490px;
+  /* min-width: 400px; */
 }
 
 .home {
@@ -127,10 +151,7 @@ ul {
 
 .instructions {
   text-align: left;
-}
-
-.info-detail {
-  max-width: 600px;
+  max-width: 1000px;
 }
 
 .small {
@@ -141,10 +162,22 @@ ul {
     border-bottom: 1px solid lightslategray;
 }
 
-@media only screen and (max-width: 1000px) {
+.instructional-links{
+    padding: 0 10px;
+}
+
+.disclaimer {
+    width: 100%
+}
+
+@media only screen and (max-width: 1050px) {
     header {
         height: 150px;
       }
+
+    .detail-page {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -153,8 +186,12 @@ ul {
   }
 
   .recipe-pic {
+    float: none;
     max-width: 300px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
+
 
   .centered {
     width: 100%;

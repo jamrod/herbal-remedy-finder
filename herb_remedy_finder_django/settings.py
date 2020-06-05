@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'herb_finder',
         'USER': 'herb_finder_user',
-        'PASSWORD': os.environ.get('HERB_FINDER_PASS'),
+        'PASSWORD': 'herb_finder',
         'HOST': 'localhost'
 
     }
