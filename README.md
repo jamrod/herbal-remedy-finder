@@ -4,7 +4,7 @@
 
 ## Project Description
 
-Online Herbal contains a database of recipes which are searchable by name, key words or ingredients. Also, there are instructionals on basic medicine making and information on individual ingredients uses in herbal medicine.
+Online Herbal contains a database of recipes which are searchable by name, keywords or ingredients. Also, there are instructionals on basic medicine making and information on individual ingredients uses in herbal medicine.
 Online Herbal has has full CRUD through the admin console.
 
 ## Project Links
@@ -18,7 +18,7 @@ Online Herbal has has full CRUD through the admin console.
 
 ### Technologies
 
-Built with Python Django and Postgresql. Deployed to an EC2 instance on AWS, with routing through Route 53.
+Built with Python Django and Postgresql. Deployed to an EC2 instance on AWS, with DNS handled by Route 53.
 
 ### Dependencies-
 
