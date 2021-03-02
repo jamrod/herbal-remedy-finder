@@ -1,20 +1,33 @@
 {% extends 'finder/base.html' %} {% block content %}
+{% load static %}
 <div class="home flex-container-column centered">
-  <h3>Search by name or key word</h3>
-  <form action="{% url 'search_results'  %}" method="GET">
-    <input name="q" type="text" placeholder="try sleep" /><button type="submit">
-      Search
-    </button>
-  </form>
-  <p>Or</p>
-  <h3>Search by Ingredient</h3>
-  <form action="{% url 'search_results_i'  %}" method="GET">
-    <input name="q" type="text" placeholder="try chamomile" /><button
-      type="submit"
-    >
-      Search
-    </button>
-  </form>
+
+  <div id="top-grid">
+    <div class="form-container flex-container-column" id="by-name">
+      <div class="inner-container flex-container-column">
+        <h3>Search by name or key word</h3>
+        <form action="{% url 'search_results'  %}" method="GET" class="space">
+          <input name="q" type="text" placeholder="try sleep" />
+          <button type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="form-container flex-container-column" id="by-ingredient">
+      <div class="inner-container flex-container-column">
+        <h3>Search by Ingredient</h3>
+        <form action="{% url 'search_results_i'  %}" method="GET" class="space">
+          <input name="q" type="text" placeholder="try chamomile" />
+          <button type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   {% if message == 'fail' %}
   <p class="fail">Search didn't find any results, try something different.</p>
   {% endif %} {% endblock content %}
