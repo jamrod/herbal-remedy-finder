@@ -1,9 +1,18 @@
 {% extends 'finder/base.html' %} {% block content %}
 <h3 class="headline">Recipes</h3>
-<span>Click on a recipe for details</span>
-<ul>
-  {% for recipe in recipes %}
-  <li><a href={% url 'recipe_detail' pk=recipe.pk %} class="no-line">{{ recipe }}</a></li>
-  {% endfor %}
-</ul>
+<p>Click on a recipe for details</p>
+
+<div class="results-container flex-container-row">
+    {% for recipe in recipes %}
+    <a href={% url 'recipe_detail' pk=recipe.pk %} >
+      <div class="search-results flex-container-column" >
+        <img src="{{ recipe.image.pic.url}}" class="results-pic"></img>
+        <div class="inner-results flex-container-column">
+         <h3>{{ recipe }}</h3> 
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+</div >
+<div class="spacer"></div>
 {% endblock content %}

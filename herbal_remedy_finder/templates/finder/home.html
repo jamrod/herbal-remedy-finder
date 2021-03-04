@@ -2,14 +2,59 @@
 {% load static %}
 <div class="home flex-container-column centered">
 
-  <div id="top-grid">
+  <div class="full-grid">
+    <a href="/search?q=kids" class="flex-container-row categories">
+      <div class="category-buttons flex-container-column" id="kids">
+        <div class="inner-container">
+          <h3>Herbs For Kids</h3>
+        </div>
+      </div>
+    </a>
+    <a href="/search?q=cold%20and%20flu" class="flex-container-row categories">
+      <div class="category-buttons flex-container-column" id="cold-flu">
+        <div class="inner-container">
+          <h3>Cold & Flu Recipes</h3>
+        </div>
+      </div>
+    </a>
+    <a href="/search?q=tea" class="flex-container-row categories">
+      <div class="category-buttons flex-container-column" id="tea">
+        <div class="inner-container">
+          <h3>Herbal Tea Recipes</h3>
+        </div>
+      </div>
+    </a>
+    <a href="/search?q=kitchen" class="flex-container-row categories">
+      <div class="category-buttons flex-container-column" id="kitchen">
+        <div class="inner-container">
+          <h3>Herbs in the Kitchen</h3>
+        </div>
+      </div>
+    </a>
+    <a href="/search?q=skincare" class="flex-container-row categories">
+      <div class="category-buttons flex-container-column" id="skincare">
+        <div class="inner-container">
+          <h3>Herbal Skincare Recipes</h3>
+        </div>
+      </div>
+    </a>
+    <a href="/search?q=medicine%20chest" class="flex-container-row categories">
+      <div class="category-buttons flex-container-column" id="medicine-chest">
+        <div class="inner-container">
+          <h3>Recipes for Your Medicine Chest</h3>
+        </div>
+      </div>
+    </a>
+  </div> 
+  <div class="line"></div>
+  <div id="two-grid">
     <div class="form-container flex-container-column" id="by-name">
       <div class="inner-container flex-container-column">
         <h3>Search by name or key word</h3>
         <form action="{% url 'search_results'  %}" method="GET" class="space">
-          <input name="q" type="text" placeholder="try sleep" />
+          <input name="q" type="text" placeholder="try 'sleep'" />
           <button type="submit">
-            Search
+            GO
           </button>
         </form>
       </div>
@@ -19,16 +64,17 @@
       <div class="inner-container flex-container-column">
         <h3>Search by Ingredient</h3>
         <form action="{% url 'search_results_i'  %}" method="GET" class="space">
-          <input name="q" type="text" placeholder="try chamomile" />
+          <input name="q" type="text" placeholder="try 'chamomile'" />
           <button type="submit">
-            Search
+            GO
           </button>
         </form>
       </div>
     </div>
   </div>
-
+  <div class="spacer">
   {% if message == 'fail' %}
   <p class="fail">Search didn't find any results, try something different.</p>
   {% endif %} {% endblock content %}
+</div>
 </div>
